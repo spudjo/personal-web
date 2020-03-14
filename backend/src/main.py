@@ -1,28 +1,45 @@
 # coding=utf-8
 
+from flask import Flask, jsonify, request
+from flask_cors import CORS
 from .database.database import Session, engine, Base
-from .database.guestbook import Guestbook
+from .database.guestbook import Guestbook, GuestbookSchema
 
+# creating the Flask application
+app = Flask(__name__)
+CORS(app)
 # generate database schema
 Base.metadata.create_all(engine)
 
-# start session
-session = Session()
 
-# check for existing data
-exams = session.query(Guestbook).all()
+@app.route('/guestbook')
+def get_guestbook():
+    # fetching from the database
+    session = Session()
+    guestbook_objects = session.query(Guestbook).all()
 
-if len(exams) == 0:
-    # create and persist dummy exam
-    post = Guestbook("Shawn", "First guestbook post!.", "script")
-    session.add(post)
-    session.commit()
+    # transforming into JSON-serializable objects
+    schema = GuestbookSchema(many=True)
+    guestbook = schema.dump(guestbook_objects)
+
+    # serializing as JSON
     session.close()
+    return jsonify(guestbook)
 
-    # reload exams
-    guestbook = session.query(Guestbook).all()
 
-# show existing exams
-print('### Guestbook:')
-for post in guestbook:
-    print(f'({post.id}) {post.name} - {post.message}')
+@app.route('/guestbook', methods=['POST'])
+def add_exam():
+    # mount exam object
+    new_post = GuestbookSchema(only=('name', 'message')).load(request.get_json())
+
+    guestbook = Guestbook(**new_post, created_by="HTTP post request")
+
+    # persist exam
+    session = Session()
+    session.add(guestbook)
+    session.commit()
+
+    # return created exam
+    new_post = GuestbookSchema().dump(guestbook)
+    session.close()
+    return jsonify(new_post), 201
