@@ -31,7 +31,6 @@ def get_guestbook():
 def add_exam():
     # mount exam object
     new_post = GuestbookSchema(only=('name', 'message')).load(request.get_json())
-
     guestbook = Guestbook(**new_post, created_by="HTTP post request")
 
     # persist exam

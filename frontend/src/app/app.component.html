@@ -1,0 +1,13 @@
+
+
+<div style="text-align:center">
+  <h1>Guestbook</h1>
+</div>
+<h2>Here are the posts created so far: </h2>
+<ul>
+  <li *ngFor="let post of guestbookList">
+    {{post.name}}
+    {{post.message}}
+  </li>
+</ul>
+
