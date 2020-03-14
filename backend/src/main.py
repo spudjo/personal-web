@@ -28,7 +28,7 @@ def get_guestbook():
 
 
 @app.route('/guestbook', methods=['POST'])
-def add_exam():
+def add_guestbook():
     # mount exam object
     new_post = GuestbookSchema(only=('name', 'message')).load(request.get_json())
     guestbook = Guestbook(**new_post, created_by="HTTP post request")

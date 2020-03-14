@@ -1,0 +1,8 @@
+<div>
+    <h2>New Message</h2>
+    <label for="guestbook-name">Name</label>
+    <input id="guestbook" (keyup)="updateName($event)">
+    <label for="guestbook-message">Message</label>
+    <input id="guestbook-message" (keyup)="updateMessage($event)">
+    <button (click)="saveGuestbook()">Submit</button>
+</div>

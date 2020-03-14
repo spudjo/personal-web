@@ -1,0 +1,8 @@
+<div>
+    <button routerLink="/new-guestbook-post">New Post</button>
+    <ul>
+      <li *ngFor="let post of guestbookList">
+          {{ post.name }} | {{ post.message }}
+      </li>
+    </ul>
+  </div>

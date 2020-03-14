@@ -15,10 +15,15 @@ export class GuestbookApiService
     }
 
     // GET list of public, future events
-    getExams(): Observable<Guestbook[]> 
+    getGuestbook(): Observable<Guestbook[]> 
     {
         return this.http
             .get<Guestbook[]>(`${API_URL}/guestbook`)
             .catch(GuestbookApiService._handleError);
     }
+
+    saveGuestbook(guestbook: Guestbook): Observable<any> {
+        return this.http
+          .post(`${API_URL}/guestbook`, guestbook);
+      }
 }
