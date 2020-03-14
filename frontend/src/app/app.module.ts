@@ -8,6 +8,8 @@ import {GuestbookApiService} from './guestbook/guestbook-api.service';
 import {GuestbookFormComponent} from './guestbook/guestbook-form.component';
 import {RouterModule, Routes} from '@angular/router';
 import {GuestbookComponent} from './guestbook/guestbook.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   { path: 'new-guestbook-post', component: GuestbookFormComponent },
@@ -19,6 +21,8 @@ const appRoutes: Routes = [
     AppComponent,
     GuestbookFormComponent,
     GuestbookComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,5 +34,4 @@ const appRoutes: Routes = [
   providers: [GuestbookApiService],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

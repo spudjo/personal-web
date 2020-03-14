@@ -2,7 +2,7 @@
     <button routerLink="/new-guestbook-post">New Post</button>
     <ul>
       <li *ngFor="let post of guestbookList">
-          {{ post.name }} | {{ post.message }}
+          {{ post.name }}<br>{{ post.created_at }}<br>{{ post.message }}
       </li>
     </ul>
   </div>

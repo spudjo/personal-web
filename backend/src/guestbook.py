@@ -1,18 +1,14 @@
-# coding=utf-8
+from flask import (
+    Blueprint, flash, g, redirect, render_template, request, url_for, jsonify, Flask
+)
 
-from flask import Flask, jsonify, request
-from flask_cors import CORS
 from .database.database import Session, engine, Base
 from .database.guestbook import Guestbook, GuestbookSchema
 
-# creating the Flask application
-app = Flask(__name__)
-CORS(app)
-# generate database schema
-Base.metadata.create_all(engine)
+bp = Blueprint('guestbook', __name__)
 
 
-@app.route('/guestbook')
+@bp.route('/guestbook')
 def get_guestbook():
     # fetching from the database
     session = Session()
@@ -27,7 +23,7 @@ def get_guestbook():
     return jsonify(guestbook)
 
 
-@app.route('/guestbook', methods=['POST'])
+@bp.route('/guestbook', methods=['POST'])
 def add_guestbook():
     # mount exam object
     new_post = GuestbookSchema(only=('name', 'message')).load(request.get_json())
