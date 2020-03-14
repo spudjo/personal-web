@@ -1,1 +1,119 @@
 /* You can add global styles to this file, and also import other style files */
+body
+{
+    background-image: url("assets/images/background.gif");
+    font-family: 'Maven Pro', sans-serif;
+    color: #eeeeee;
+}
+
+header
+{
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 1em;
+}
+
+footer
+{
+    position:absolute; 
+    width: 100%;
+    margin: auto;
+    bottom:10px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8em;
+    letter-spacing: 0.5em;
+}
+
+.content-main
+{
+    position:relative;
+    background-color:#111111;
+    height: 600px;
+	width: 800px;
+	margin: 100px auto 0px;
+	box-shadow:black 0px 5px 15px;
+	text-align:center;
+	padding:40px 0px;
+}
+
+.content
+{
+    width: 100%;
+    height: 525px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1em;
+    
+}
+
+.guestbook_entry
+{
+    display: block;
+	text-align:center;
+}
+
+.separator
+{
+    width: 95%;
+    margin: 10px auto;
+    height: 1px;
+    background-color: #eeeeee;
+}
+
+a:link
+{
+    text-decoration: inherit;
+    color: inherit;
+    -webkit-transition: color 1s;
+    -moz-transition:    color 1s;
+    -ms-transition:     color 1s;
+    -o-transition:      color 1s;
+    transition:         color 1s;
+}
+
+a:visited
+{
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a:hover
+{
+    color: red;
+}
+
+.column
+{
+    float: left;
+    width: 50%;
+    text-align: left;
+}
+
+.row:after
+{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#about-avatar
+{
+    display: block;
+    max-width: 80%;
+    width: auto;
+    height: auto;
+    margin: 10px;
+}
+
+.about-list-item
+{
+    margin-top: 10px;
+}
+
+
+@media only screen and (max-width: 1300px)
+{
+    .content-main
+    {
+        width: 62.5%;
+    }
+}
