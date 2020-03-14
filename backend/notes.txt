@@ -1,0 +1,5 @@
+docker run --name personal_web \
+    -p 5432:5432 \
+    -e POSTGRES_DB=personal_web \
+    -e POSTGRES_PASSWORD=mcmXz6ozAuN6PwHyRJgJUctk \
+    -d postgres
