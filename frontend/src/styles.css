@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 body
 {
     background-image: url("assets/images/background.gif");
@@ -6,54 +5,98 @@ body
     color: #eeeeee;
 }
 
-header
+h1, h2, h3, h4, h5 
 {
     font-family: 'Roboto Mono', monospace;
-    letter-spacing: 1em;
+    letter-spacing: 0.5rem;
+}
+
+header
+{
+    position: relative;
+    display: block;
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 1rem;
+    font-size: 1.5rem;
+}
+
+nav
+{ 
+    width: 100%;
+    display: block;
+    margin: auto;
+    top:10px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.5rem;
+    /* background-color: sienna;
+    border: 1px solid lawngreen; */
 }
 
 footer
 {
-    position:absolute; 
+    position: absolute;
+    display: block; 
     width: 100%;
     margin: auto;
     bottom:10px;
     font-family: 'Roboto Mono', monospace;
-    font-size: 0.8em;
-    letter-spacing: 0.5em;
+    font-size: 0.8rem;
+    letter-spacing: 0.5rem;
+    /* background-color: sienna;
+    border: 1px solid lawngreen; */
 }
 
 .content-main
 {
     position:relative;
-    background-color:#111111;
-    height: 600px;
+    background-color:#111111; 
+    height: 600px;  
 	width: 800px;
 	margin: 100px auto 0px;
 	box-shadow:black 0px 5px 15px;
 	text-align:center;
-	padding:40px 0px;
+    padding:40px 0px;
 }
 
 .content
 {
-    width: 100%;
-    height: 525px;
+    position: relative;
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1em;
-    
-}
-
-.guestbook_entry
-{
-    display: block;
-	text-align:center;
+    font-size: 1rem;   
+    /* background-color: hotpink;
+    border: 1px solid hotpink; */
 }
 
 .separator
 {
-    width: 95%;
+    width: 100%;
+    margin: 10px auto;
+    height: 2px;
+    background-color: #eeeeee;
+}
+
+.separator-lg
+{
+    width: 100%;
+    margin: 10px auto;
+    height: 1px;
+    background-color: #eeeeee;
+}
+
+.separator-md
+{
+    width: 75%;
+    margin: 10px auto;
+    height: 1px;
+    background-color: #eeeeee;
+}
+
+.separator-sm
+{
+    width: 50%;
     margin: 10px auto;
     height: 1px;
     background-color: #eeeeee;
@@ -78,42 +121,67 @@ a:visited
 
 a:hover
 {
-    color: red;
+    color: #c1b46c;
+    text-decoration: line-through dotted;
 }
 
-.column
+button 
 {
-    float: left;
-    width: 50%;
-    text-align: left;
+    border-radius: 5px;
+    width: 100px;
 }
 
-.row:after
+.glitch 
 {
-    content: "";
-    display: table;
-    clear: both;
+    position: relative;
 }
-
-#about-avatar
+.glitch::before, .glitch::after 
 {
-    display: block;
-    max-width: 80%;
-    width: auto;
-    height: auto;
-    margin: 10px;
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.about-list-item
-{
-    margin-top: 10px;
-}
-
-
-@media only screen and (max-width: 1300px)
+@media only screen and (max-width: 1080px)
 {
     .content-main
     {
-        width: 62.5%;
+        height: 800px;  
+        width: 75%;
+        background-color: red;
     }
+
+    /* nav
+    {
+        display: none;
+    }
+
+    footer
+    {
+        display: block;
+    } */
+}
+
+
+@media only screen and (max-width: 990px)
+{
+    .content-main
+    {
+        height: 800px;  
+        width: 75%;
+        background-color: blue;
+    }
+
+    /* nav
+    {
+        display: block;
+    }
+
+    footer
+    {
+        display: none;
+    } */
 }

@@ -1,0 +1,23 @@
+.guestbook 
+{
+    overflow-y: scroll;
+    height: 350px;
+
+    margin: 25px auto;
+}
+
+.guestbook-post-col-left
+{
+    width: 100px;
+    vertical-align: text-top;
+}
+
+.guestbook-post {
+    width: 50%;
+    margin: 10px auto;
+    text-align: left;
+}
+
+textarea {
+    resize: none;
+}

@@ -1,8 +1,41 @@
-<div>
-    <button routerLink="/new-guestbook-post">New Post</button>
-    <ul>
-      <li *ngFor="let post of guestbookList">
-          {{ post.name }}<br>{{ post.created_at }}<br>{{ post.message }}
-      </li>
-    </ul>
+<h4>Leave a message</h4>
+<table class='guestbook-post'>
+  <tr>
+    <td>
+      <label for="guestbook-name">Name:</label>
+    </td>
+    <td>
+      <input id="guestbook" style='width: 100%' (keyup)="updateName($event)" required>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="guestbook-message">Comment:</label>
+    </td>
+    <td>
+      <textarea id="guestbook-message" (keyup)="updateMessage($event)" style='width: 100%' required></textarea>
+    </td>
+  </tr>
+  <tr>
+</table>
+<button (click)="saveGuestbook()">Submit</button>
+
+<div class='guestbook'>
+  <div *ngFor="let post of guestbookList.slice().reverse() ; last as isLast">
+    <table class='guestbook-post'>
+        <tr class='guestbook-post-row'>
+          <td class='guestbook-post-col-left'>Name:</td>
+          <td class='guestbook-post-col-right'>{{ post.name }}</td>
+        </tr>
+        <tr class='guestbook-post-row'>
+          <td class='guestbook-post-col-left'>Date / Time:</td>
+          <td class='guestbook-post-col-right'>{{ post.created_at | date:'medium'}}</td>
+        </tr>
+        <tr class='guestbook-post-row'>
+          <td class='guestbook-post-col-left'>Comment:</td>
+          <td class='guestbook-post-col-right'>{{ post.message }}</td>
+        </tr>
+      </table>
+      <div class='separator-sm' *ngIf="isLast==false"></div>
   </div>
+</div>

@@ -10,7 +10,8 @@ export class GuestbookApiService
 {
     constructor(private http: HttpClient) { }
 
-    private static _handleError(err: HttpErrorResponse | any) {
+    private static _handleError(err: HttpErrorResponse | any) 
+    {
         return Observable.throw(err.message || 'Error: Unable to complete request.');
     }
 

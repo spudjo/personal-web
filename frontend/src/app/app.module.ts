@@ -12,15 +12,14 @@ import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { GuestbookApiService } from './guestbook/guestbook-api.service';
 import { GuestbookComponent } from './guestbook/guestbook.component';
-import { GuestbookFormComponent } from './guestbook/guestbook-form.component';
 import { MiscComponent } from './misc/misc.component';
+import { NavComponent } from './nav/nav.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'guestbook', component: GuestbookComponent },
-  { path: 'new-guestbook-post', component: GuestbookFormComponent },
   { path: 'misc', component: MiscComponent },
 ];
 
@@ -32,9 +31,9 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     ProjectsComponent,
-    GuestbookFormComponent,
     GuestbookComponent,
     MiscComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
