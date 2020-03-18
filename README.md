@@ -7,7 +7,7 @@
 3. [SQLAlchemy](https://pypi.org/project/SQLAlchemy/) and [PostgreSQL](https://www.postgresql.org/)
 
 ### Dependancies
-Flask, SQLAlchemy, Marshmallow, Psycopg2, SQLAlchemy, Angular
+Flask, Flask_cors, SQLAlchemy, Marshmallow, Psycopg2, Angular
 
 ### Requirements
 Currently there is no live version of this website up. To check it out, ensure that all dependancies are installed, then install Docker and run the following to create the Postgre database:
