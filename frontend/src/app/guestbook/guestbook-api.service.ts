@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
-import { API_URL } from '../env';
+import { GUESTBOOK_API_URL } from '../env';
 import { Guestbook } from './guestbook.model';
 
 @Injectable()
@@ -19,12 +19,12 @@ export class GuestbookApiService
     getGuestbook(): Observable<Guestbook[]> 
     {
         return this.http
-            .get<Guestbook[]>(`${API_URL}/guestbook`)
+            .get<Guestbook[]>(`${GUESTBOOK_API_URL}`)
             .catch(GuestbookApiService._handleError);
     }
 
     saveGuestbook(guestbook: Guestbook): Observable<any> {
         return this.http
-          .post(`${API_URL}/guestbook`, guestbook);
+          .post(`${GUESTBOOK_API_URL}`, guestbook);
       }
 }

@@ -23,4 +23,7 @@ def create_app(test_config=None):
     from . import guestbook
     app.register_blueprint(guestbook.bp)
 
+    from . import github
+    app.register_blueprint(github.bp)
+
     return app

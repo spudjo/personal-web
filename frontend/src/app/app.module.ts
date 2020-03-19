@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { ProjectApiService } from './projects/projects-api.service';
 import { ProjectsComponent } from './projects/projects.component';
 import { GuestbookApiService } from './guestbook/guestbook-api.service';
 import { GuestbookComponent } from './guestbook/guestbook.component';
@@ -42,7 +43,7 @@ const appRoutes: Routes = [
       appRoutes,
     ),
   ],
-  providers: [GuestbookApiService],
+  providers: [GuestbookApiService, ProjectApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
