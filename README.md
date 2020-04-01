@@ -1,6 +1,8 @@
 # personal-web
  My personal website. Will feature my bio as well as various projects. Still a work on progress, especially the frontend.
  
+ URL: http://www.spudjo.com/
+ 
 ### Technologies
 1. [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 2. [Angular](https://angular.io/)
@@ -10,7 +12,7 @@
 Flask, Flask_cors, SQLAlchemy, Marshmallow, Psycopg2, Angular
 
 ### Requirements
-Currently there is no live version of this website up. To check it out, ensure that all dependancies are installed, then install Docker and run the following to create the Postgre database:
+To run it yourself, ensure that all dependancies are installed, then install Docker and run the following to create the Postgre database:
 
  docker run --name personal_web \
     -p 5432:5432 \
