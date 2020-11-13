@@ -11,6 +11,8 @@ setup(
         'flask_cors',
         'sqlalchemy',
         'psycopg2',
-        'marshmellow'
+        'marshmallow',
+        'requests',
+        'beautifulsoup4'
     ],
 )

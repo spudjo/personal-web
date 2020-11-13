@@ -1,8 +1,9 @@
 body
 {
     background-image: url("assets/images/background.gif");
-    font-family: 'Maven Pro', sans-serif;
-    color: #eeeeee;
+    font-family: 'Roboto Mono', sans-serif;
+    color: rgb(155, 155, 155);
+    font-size: 0.75rem;
 }
 
 h1, h2, h3, h4, h5 
@@ -35,18 +36,36 @@ nav
     border: 1px solid lawngreen; */
 }
 
-footer
+.separator
 {
-    position: absolute;
-    display: block; 
     width: 100%;
-    margin: auto;
-    bottom:10px;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.5rem;
-    /* background-color: sienna;
-    border: 1px solid lawngreen; */
+    margin: 10px auto;
+    height: 2px;
+    background-color: rgb(155, 155, 155);
+}
+
+.separator-lg
+{
+    width: 100%;
+    margin: 10px auto;
+    height: 1px;
+    background-color: rgb(155, 155, 155);
+}
+
+.separator-md
+{
+    width: 75%;
+    margin: 10px auto;
+    height: 1px;
+    background-color: rgb(155, 155, 155);
+}
+
+.separator-sm
+{
+    width: 50%;
+    margin: 10px auto;
+    height: 1px;
+    background-color: rgb(155, 155, 155);
 }
 
 .content-main
@@ -59,49 +78,6 @@ footer
 	box-shadow:black 0px 5px 15px;
 	text-align:center;
     padding: 40px 0px;
-}
-
-.content
-{
-    position: relative;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1rem;   
-    /* background-color: hotpink;
-    border: 1px solid hotpink; */
-}
-
-.separator
-{
-    width: 100%;
-    margin: 10px auto;
-    height: 2px;
-    background-color: #eeeeee;
-}
-
-.separator-lg
-{
-    width: 100%;
-    margin: 10px auto;
-    height: 1px;
-    background-color: #eeeeee;
-}
-
-.separator-md
-{
-    width: 75%;
-    margin: 10px auto;
-    height: 1px;
-    background-color: #eeeeee;
-}
-
-.separator-sm
-{
-    width: 50%;
-    margin: 10px auto;
-    height: 1px;
-    background-color: #eeeeee;
 }
 
 a:link
@@ -127,38 +103,30 @@ a:hover
     text-decoration: line-through dotted;
 }
 
-button 
-{
-    border-radius: 5px;
-    width: 100px;
-}
 
 
-@media only screen and (max-width: 1080px)
+@media only screen and (max-width: 950px)
 {
-    .content-main
+
+    body
     {
-        width: 75%;
+        background-image: none;
+        background-color: #111111;
+        font-family: 'Roboto Mono', sans-serif;
+        color: rgb(155, 155, 155);
+        font-size: 0.75rem;
     }
 
-    /* nav
-    {
-        display: none;
-    }
-
-    footer
-    {
-        display: block;
-    } */
-}
-
-
-@media only screen and (max-width: 990px)
-{
     .content-main
     {
         height: unset;  
-        width: 75%;
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .avatar {
+        max-width: 80%;
     }
 
     /* nav

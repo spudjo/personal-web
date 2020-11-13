@@ -1,29 +1,30 @@
 .about
 {
+  position: relative;
+  display: block;
   width: 100%;
   margin-left: auto;
   margin-right: auto; 
-  /* border: 1px solid blue; */
 }
 
 .about-col-left 
 {
-  float: left;
-  height: 100%;
+  display: inline-block;
   width: 41.5%;
-  text-align: left;
-  padding: 0 4%;
-  /* border: 1px solid gold; */
+  border: 1px solid blue;
 }
 
 .about-col-right  
 {
-  float: right;
+  height: 100%;
+  display: inline-block;
   width: 41.5%;
-  text-align: left;
-  padding: 0 4%;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
+
+
+
+
 
 .avatar
 {
@@ -35,13 +36,6 @@
   border-radius: 10px;
 }
 
-.icon-bar
-{
-  position:relative; 
-  margin: auto;
-  /* background-color: green;
-  border: 1px solid teal; */
-}
 
 .icon
 {
@@ -68,14 +62,7 @@
   opacity:0;
 }
 
-
-@media only screen and (max-width: 1080px)
-{
-
-}
-
-
-@media only screen and (max-width: 990px)
+@media only screen and (max-width: 950px)
 {
   .about-col-left, .about-col-right
   {

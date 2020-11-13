@@ -1,42 +1,9 @@
 <div class='projects'>
     <div *ngFor="let project of projectList">
         <ul>
-            <li>Name: {{project.name}}</li>
-            <li>Description: {{project.description}}</li>
-            <li>Creation Date: {{project.createdAt}}</li>
-            <li>Update Date: {{project.updatedAt}}</li>
-            <a href='{{ project.url}}'>Link</a>
+            <li>Name: <a style='text-decoration: underline'href='{{ project.url}}'>{{project.name}}</a></li>
+            <li>Description: {{project.description}}</li>            
+            <!-- <li>Read me: {{project.readme_text}}</li> -->
         </ul>
     </div>
-
-    <div *ngFor="let project of projectList; let i = index; let even = even">
-        <table *ngIf="even">
-            <tr>
-                <td>{{projectList[i].name}}</td>
-                <td>{{projectList[i+1].name}}</td>
-            </tr>
-            <tr>
-                <td>{{projectList[i].description}}</td>
-                <td>{{projectList[i+1].description}}</td>
-            </tr>
-            <tr>
-                <td>{{projectList[i].createdAt | date:'medium'}}</td>
-                <td>{{projectList[i+1].createdAt | date:'medium'}}</td>
-            </tr>
-            <tr>
-                <td>{{projectList[i].updatedAt | date:'medium'}}</td>
-                <td>{{projectList[i+1].updatedAt | date:'medium'}}</td>
-            </tr>
-            <tr>
-                <td><a href='{{ projectList[i].url}}'>Link</a></td>
-                <td><a href='{{ projectList[i+1].url}}'>Link</a></td>
-            </tr>
-        </table>
-    </div>
-
-    <!-- <div *ngFor="let project of projectList; let i = index; let even = even">
-        <div class='project'>
-
-        </div>
-    </div> -->
 </div>

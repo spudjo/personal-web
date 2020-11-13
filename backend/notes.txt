@@ -6,10 +6,15 @@ docker run --name personal_web \
 
 
 
-
 GET request to add guestbook record
 
 
 curl -X POST -H "Content-Type: application/json" -d "{\"name\": \"Eric\", \"message\": \"Feed Nugget!.\"}" http://127.0.0.1:5000/guestbook
 
 
+
+
+docker run --name personal_web -p 5432:5432 -e POSTGRES_DB=personal_web  -e POSTGRES_PASSWORD=mcmXz6ozAuN6PwHyRJgJUctk -d postgres
+
+
+fa080fad139e8125e793461cb8ae4d13883f8008473eae2ce97e8219119e7f64
