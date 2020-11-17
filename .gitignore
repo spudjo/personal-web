@@ -4,3 +4,9 @@
 .cert/Attachments-ORDER #414203059 - Your PositiveSSL Certificate for spudjo.com/spudjo_com.zip
 .cert/notes.txt
 .cert/SSL Certification.txt
+.cert/spudjo_com.key
+.cert/spudjo_com_chain.crt
+backend/src/cert.pem
+backend/src/key.pem
+notes2.txt
+spudjo_com.service

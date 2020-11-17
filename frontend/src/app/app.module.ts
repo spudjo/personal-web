@@ -16,6 +16,8 @@ import { GuestbookComponent } from './guestbook/guestbook.component';
 import { MiscComponent } from './misc/misc.component';
 import { NavComponent } from './nav/nav.component';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
@@ -43,7 +45,8 @@ const appRoutes: Routes = [
       appRoutes,
     ),
   ],
-  providers: [GuestbookApiService, ProjectApiService],
+  providers: [GuestbookApiService, ProjectApiService, 
+    {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

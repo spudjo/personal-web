@@ -1,7 +1,7 @@
 <div class='projects'>
     <div *ngFor="let project of projectList">
         <ul>
-            <li>Name: <a style='text-decoration: underline'href='{{ project.url}}'>{{project.name}}</a></li>
+            <li>Name: <a style='text-decoration: underline' href='{{ project.url}}' target="_blank">{{project.name}}</a></li>
             <li>Description: {{project.description}}</li>            
             <!-- <li>Read me: {{project.readme_text}}</li> -->
         </ul>

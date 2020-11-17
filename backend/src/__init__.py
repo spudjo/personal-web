@@ -27,4 +27,8 @@ def create_app(test_config=None):
         from . import github
         app.register_blueprint(github.bp)
 
+    print("!!!!! SERVER START !!!!!")
+
+    github.get_github_test()
+
     return app

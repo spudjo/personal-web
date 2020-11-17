@@ -29,7 +29,7 @@ def print_json_formatted(data):
     print(json.dumps(data, indent=4, sort_keys=True))
 
 
-def print_json_list_formatte(data_list):
+def print_json_list_formatted(data_list):
     for data in data_list:
         print_json_formatted(data)
         print()
@@ -39,7 +39,7 @@ def print_key_info(data):
     print('ID: {0}'.format(data['id']))
     print('Name: {0}'.format(data['name']))
     print('Description: {0}'.format(data['description']))
-    print('HTML URL: {0}'.format(data['html_url']))
+    print('HTML URL: {0}'.format(data['url']))
     print('Created At: {0}'.format(data['created_at']))
     print('Updated At: {0}'.format(data['updated_at']))
 
@@ -49,26 +49,29 @@ def print_key_info_list(data_list):
         print_key_info(data)
         print()
 
-
 def minimize_repo_list(data_list):
     minimized_list = []
 
+    print()
+
     for data in data_list:
+        
+        if (isinstance(data, dict)):
 
-        if data['name'] in APPS:
+            if data['name'] in APPS:
 
-            readme_url = 'https://raw.githubusercontent.com/x-raph/{0}/master/README.md'.format(data['name']);
+                readme_url = 'https://raw.githubusercontent.com/x-raph/{0}/master/README.md'.format(data['name']);
 
-            minimized_list.append({
-                'id': data['id'],
-                'name': data['name'],
-                'description': data['description'],
-                'url': data['html_url'],
-                'readme_url': readme_url,
-                'readme_text': get_readme_text(readme_url),
-                'created_at': data['created_at'],
-                'updated_at': data['updated_at']
-                })
+                minimized_list.append({
+                    'id': data['id'],
+                    'name': data['name'],
+                    'description': data['description'],
+                    'url': data['html_url'],
+                    'readme_url': readme_url,
+                    'readme_text': get_readme_text(readme_url),
+                    'created_at': data['created_at'],
+                    'updated_at': data['updated_at']
+                    })
 
     return minimized_list
 
@@ -120,12 +123,19 @@ def get_readme_text(url):
     return text
 
 
-@bp.route('/github')
+@bp.route('/api/github')
 def get_github():
 
-    user = 'x-raph'
+    user = 'spudjo'
+    repos = get_public_repos(user)
+    minimized_repos = minimize_repo_list(repos)
+    sorted_repos = sort_repos(minimized_repos, sort_by='updated_at', direction='desc')  
+    # print_key_info_list(sorted_repos)
+    return jsonify(sorted_repos)
+
+def get_github_test():
+    user = 'spudjo'
     repos = get_public_repos(user)
     minimized_repos = minimize_repo_list(repos)
     sorted_repos = sort_repos(minimized_repos, sort_by='updated_at', direction='desc')
-    return jsonify(sorted_repos)
-
+    # print_key_info_list(sorted_repos)

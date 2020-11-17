@@ -7,12 +7,13 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
+        'beautifulsoup4',
         'flask',
         'flask_cors',
-        'sqlalchemy',
-        'psycopg2',
         'marshmallow',
+        # 'psycopg2',
         'requests',
-        'beautifulsoup4'
+        'sqlalchemy',
+        'gunicorn'  
     ],
 )
