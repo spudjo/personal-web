@@ -7,9 +7,8 @@ URL: https://www.spudjo.com/
 1. [Angular](https://angular.io/)
 2. [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 3. [PostgreSQL](https://www.postgresql.org/)
-4. [PostgreSQL](https://www.postgresql.org/)
-5. [Nginx](https://www.nginx.com/)
-6. [Gunicorn](https://gunicorn.org/)
+4. [Nginx](https://www.nginx.com/)
+5. [Gunicorn](https://gunicorn.org/)
 
 ### Dependancies
 beautifulsoup4, flask, flask_cors, SQLAlchemy, psycopg2, marshmallow, requests, gunicorn
